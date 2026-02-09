@@ -1,0 +1,38 @@
+.new-collections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 100px;
+    padding: 40px 20px;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(255, 255, 255, 0.9));
+}
+
+.new-collections h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.new-collections hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, gold, orange);
+    border: none;
+}
+
+.collections {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
+    justify-items: center; /* horizontally center each item */
+    align-items: center; /* align items to top (or use center if you want vertical centering) */
+    margin-top: 50px;
+    gap: 30px;
+    background:whitesmoke;
+}
+

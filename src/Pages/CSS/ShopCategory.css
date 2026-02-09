@@ -1,0 +1,243 @@
+.shop-category {
+    position: relative;
+    background: 
+        url('https://s.widget-club.com/images/YyiR86zpwIMIfrCZoSs4ulVD9RF3/b99529b72bd187b9c62ab6292117c36f/b4d67dec8bd1bf8e1a344d02ac730545.jpg?q=70&w=500');
+    padding: 80px 0 140px;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Banner with glassmorphism & hover effect */
+.shopcategory-banner {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px; /* reduce height for better proportion */
+    object-fit: cover;
+    object-position: center top; /* ensures important part of image is visible */
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15), 0 5px 20px rgba(0,0,0,0.06);
+    margin: 0 auto;
+    transform: perspective(1000px) rotateX(0deg);
+    transition: all 0.5s ease;
+    will-change: transform, box-shadow;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft gradient overlay */
+.shopcategory-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Glass overlay */
+.shopcategory-banner::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px); /* slightly reduced blur */
+    pointer-events: none;
+    border-radius: 25px;
+    z-index: 2;
+}
+
+/* Banner hover tilt & pop */
+.shopcategory-banner:hover {
+    transform: perspective(1000px) rotateX(2deg) translateY(-6px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2), 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+/* Content container overlapping banner */
+.shopcat-container {
+    position: relative;
+    z-index: 1;
+    margin: -80px auto 0; /* pulls container over banner smoothly */
+    padding: 50px 40px;
+    max-width: 1200px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(14px);
+    border-radius: 35px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+/* Optional: subtle top gradient for luxury effect */
+.shopcat-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+/* Index / Sort section */
+.shopcategory-indexSort {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.shopcategory-sort {
+    padding: 12px 35px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.shopcategory-sort:hover {
+    border-color: #ffc107;
+    background-color: #fff8e1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(255,193,7,0.25);
+}
+
+.shopcategory-indexSort p {
+    font-weight: 400;
+}
+
+.shopcategory-indexSort p span {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Product grid */
+.shopcategory-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 50px;
+  position: relative;
+}
+
+/* Glassmorphism Product Card */
+.shopcategory-products > div {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  ); /* softer glass gradient */
+  backdrop-filter: blur(6px) saturate(160%);
+  -webkit-backdrop-filter: blur(6px) saturate(160%);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Inner glow for premium vibe */
+.shopcategory-products > div::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.5) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover Effects */
+.shopcategory-products > div:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 193, 7, 0.6); /* golden glow */
+}
+
+/* Subtle shimmer effect on hover */
+.shopcategory-products > div:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  transform: skewX(-20deg);
+  animation: shimmer 1s forwards;
+  border-radius: 25px;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Load More button */
+.shopcategory-loadmore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto 0;
+    width: 300px;
+    height: 70px;
+    border-radius: 80px;
+    background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 12px 30px rgba(255,152,0,0.35);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.shopcategory-loadmore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.25);
+    transform: skewX(-30deg);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.shopcategory-loadmore:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(255,152,0,0.5);
+}
+
+.shopcategory-loadmore:hover::before {
+    left: 100%;
+}

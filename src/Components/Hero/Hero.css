@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 60px 80px;
+  overflow: hidden;
+  z-index: 1;
+
+  /* Slight pop */
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  /* Golden gradient base */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 239, 184, 0.92) 0%,   /* light gold */
+    rgba(255, 215, 0, 0.22) 50%,    /* gold */
+    rgba(218, 165, 32, 0.32) 100%   /* goldenrod */
+  );
+}
+
+/* Blurred background image on the left */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 76.6%;
+  width: 57.5%;
+  background: url('../Assets/hero_background.jpg') no-repeat right center;
+  background-size: cover;
+  transform: scale(1.1);
+  z-index: -3;
+}
+
+/* Golden tint overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(255, 255, 255, 0.9));
+  z-index: -2;
+}
+
+/* Left Side */
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  padding-right: 40px;
+  z-index: 2;
+}
+
+.hero-left h2 {
+  color: black;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: 'Play';
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-impact-message {
+  font-size: 24px;
+  font-weight: 800;
+  font-style: italic;
+  color: black;
+  background-color: white;
+  padding: 12px 20px;
+  border-left: 4px solid black;
+  border-radius: 8px;
+  max-width: 450px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.hero-left p {
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hero-latest-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  background:linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  width: fit-content;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hero-latest-btn:hover {
+  background-color: #222;
+  transform: scale(1.03);
+}
+
+/* Right Side with Swiper */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* align to the rightmost side */
+  align-items: center;
+  padding-right: 0; /* remove any right padding */
+  z-index: 1;
+  overflow: hidden;
+  margin-left: 300px;
+  margin-bottom: 200px;
+}
+
+.hero-right .swiper {
+  width: 100%;
+  height: 650px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.hero-right .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Responsive (Optional) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-right .swiper {
+    width: 90%;
+    height: auto;
+  }
+}

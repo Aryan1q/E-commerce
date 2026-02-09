@@ -1,0 +1,173 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Spread logo and menu nicely */
+    align-items: center;
+    padding: 14px 40px;
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.15);
+    background-color: white; /* Makes gold pop */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo Image */
+.nav-logo-img {
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Logo Text */
+.nav-logo p {
+    font-size: 95px;
+    width: 100%;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Cinzel Decorative', 'Playfair Display', 'Cormorant Garamond', serif;
+    color: black;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Menu Items */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.nav-menu li {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li:hover {
+    color: #f6dc7f; /* Gold on hover */
+}
+
+.nav-menu li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li:hover::after {
+    width: 100%;
+}
+
+/* Login & Cart Section */
+.nav-login-cart {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-login-cart button {
+    padding: 10px 25px;
+    border: 2px solid black;
+    border-radius: 50px;
+    background-color: white;
+    color: #4a4a4a;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-login-cart button:hover {
+    background-color: black;
+    color: white;
+}
+
+.nav-cart {
+    position: relative; /* Make the icon the reference point */
+
+}
+.nav-cart-count {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: goldenrod;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    z-index: 10;
+}
+
+@media(max-width:1280px){
+    .navbar{
+        padding:12px 50px;
+    }
+    .nav-logo img{
+        width: 40px;
+    }
+    .nav-logo p{
+        font-size: 60px;
+    }
+    .nav-menu{
+        gap: 30px;
+        font-size: 16px;
+    }
+    .nav-login-cart{
+        gap: 30px;
+    }
+    .nav-login-cart button{
+        width: 120px;
+        height: 45px;
+        font-size:  16px;
+    }
+    .nav-cart-count{
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width:1024px){
+    .navbar{
+        padding:12px 30px;
+    }
+    .nav-logo img{
+        width: 40px;
+    }
+    .nav-logo p{
+        font-size: 60px;
+    }
+    .nav-menu{
+        gap: 25px;
+        font-size: 14px;
+    }
+    .nav-login-cart img{
+        width: 30px;
+    }
+    .nav-login-cart button{
+        width: 80px;
+        height: 35px;
+        font-size:  14px;
+    }
+    .nav-cart-count{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media(max-width:800px){
+    .navbar{
+        padding: 10px 0px;
+    }
+}

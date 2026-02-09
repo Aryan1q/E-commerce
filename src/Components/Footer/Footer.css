@@ -1,0 +1,117 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 20px;
+
+  /* Gradient + Image layered */
+  background: 
+    linear-gradient(180deg, rgba(255, 215, 0, 0.15), rgba(255, 255, 255, 0.9)),
+    url("https://c8.alamy.com/comp/2FMYNFM/white-seamless-geometric-pattern-abstract-background-for-wallpaper-texture-fabric-and-other-designs-4k-resolution-black-vector-2FMYNFM.jpg");
+
+  background-size: cover;      /* make sure wallpaper fills */
+  background-position: center;
+  background-attachment: fixed; /* keep it steady while scrolling */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo p {
+    color: #2a2a2a;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    color: #252525;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-links li {
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-links li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: gold;
+    transition: width 0.3s ease;
+}
+
+.footer-links li:hover {
+    color: goldenrod;
+}
+
+.footer-links li:hover::after {
+    width: 100%;
+}
+
+.footer-social-icon {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons-container {
+    padding: 10px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.footer-icons-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(255, 165, 0, 0.4);
+    background: linear-gradient(145deg, gold, orange);
+    color: white;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-size: 16px;
+    text-align: center;
+}
+
+.footer-copyright hr {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    height: 3px;
+    background: #c7c7c7;
+}
+
+.footer-logo img {
+    height: 60px; /* Adjust to match text height */
+    width: auto;  /* Keeps aspect ratio */
+    object-fit: contain;
+}
+
